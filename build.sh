@@ -24,8 +24,8 @@ set -o xtrace
 
 # Configurations
 BOX="debian-jessie"
-ISO_URL="http://cdimage.debian.org/debian-cd/8.3.0/amd64/iso-cd/debian-8.3.0-amd64-netinst.iso"
-ISO_MD5="a9b490b4215d1e72e876b031dafa7184"
+ISO_URL="http://cdimage.debian.org/debian-cd/8.3.0/i386/iso-cd/debian-8.3.0-i386-netinst.iso"
+ISO_MD5="37f329724a1c072cbe0ebda211fdeb88"
 
 # location, location, location
 FOLDER_BASE=$(pwd)
@@ -180,7 +180,7 @@ echo "Creating VM Box..."
 if ! VBoxManage showvminfo "${BOX}" >/dev/null 2>&1; then
   VBoxManage createvm \
     --name "${BOX}" \
-    --ostype Debian_64 \
+    --ostype Debian \
     --register \
     --basefolder "${FOLDER_VBOX}"
 
